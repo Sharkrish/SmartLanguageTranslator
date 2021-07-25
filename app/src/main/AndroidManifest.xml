@@ -59,7 +59,7 @@
         <!-- Production app id  ca-app-pub-9611309669090513~3333307714 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-3940256099942544~3347511713"/>
+            android:value="ca-app-pub-9611309669090513~3333307714"/>
     </application>
 
 </manifest>

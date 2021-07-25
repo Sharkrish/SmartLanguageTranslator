@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onActivityResult(ActivityResult result) {
                         if (result.getResultCode() == RESULT_OK){
                             //launchMainService();
+                            callAds();
                         }
                     }
                 }
@@ -133,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        checkOverlayPermission();
+        //checkOverlayPermission();
         checkInternetConnectivity();
         moveToAction();
     }
@@ -147,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
         // Sample AdMob app ID: ca-app-pub-3940256099942544/5224354917
         // Production app id  ca-app-pub-9611309669090513/3804559933
         AdRequest adRequest = new AdRequest.Builder().build();
-        RewardedAd.load(this, "ca-app-pub-3940256099942544/5224354917",
+        RewardedAd.load(this, "ca-app-pub-9611309669090513/3804559933",
                 adRequest, new RewardedAdLoadCallback() {
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
@@ -322,12 +323,12 @@ public class MainActivity extends AppCompatActivity {
     private void launchMainService() {
 
         boolean checkAccessibility = accessibilityEnabled(this, Myservice.class);
-        Toast.makeText(getApplicationContext(),""+checkAccessibility,Toast.LENGTH_LONG).show();
         if(!checkAccessibility){
             Intent newIntent = new Intent(android.provider.Settings.ACTION_ACCESSIBILITY_SETTINGS);
             callTheActitvity.launch(newIntent);
         }else{
             startService(new Intent(this, Myservice.class));
+            callAds();
         }
 
 
@@ -478,6 +479,6 @@ public class MainActivity extends AppCompatActivity {
         checkForUpdates();
         checkOverlayPermission();
         checkInternetConnectivity();
-        callAds();
+        //callAds();
     }
 }

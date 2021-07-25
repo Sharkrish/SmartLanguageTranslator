@@ -62,6 +62,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
+import hotchemi.android.rate.BuildConfig;
+
 
 public class TextTranslate extends Fragment {
     private TextToSpeech textToSpeech;
@@ -101,7 +103,7 @@ public class TextTranslate extends Fragment {
                 shareIntent.setAction(Intent.ACTION_SEND);
                 shareIntent.setType("text/plain");
                 String shareSub = translatedText.getText().toString()+"\n\n";
-                shareSub = shareSub + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n\n";
+                shareSub = shareSub + "https://play.google.com/store/apps/details?id=" + getActivity().getPackageName() +"\n\n";
                 shareIntent.putExtra(Intent.EXTRA_TEXT,shareSub);
                 startActivity(Intent.createChooser(shareIntent,"Share Using"));
             }

@@ -114,8 +114,6 @@ public class Myservice extends AccessibilityService {
 
     @Override
     public void onAccessibilityEvent(AccessibilityEvent event) {
-        Toast.makeText(getApplicationContext(),"EventType "+event.getEventType(),Toast.LENGTH_LONG ).show();
-
         switch(event.getEventType()){
             case AccessibilityEvent.TYPE_VIEW_FOCUSED:
                 calltheTextToPerform(event);
@@ -138,23 +136,19 @@ public class Myservice extends AccessibilityService {
         int selectBegin = 0;
 
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            Log.d("EventSourceLog",""+event.getSource());
             if(event.getSource() != null){
-                selectBegin = event.getSource().getTextSelectionStart();
-                int selectEnd = event.getSource().getTextSelectionEnd();
-                Log.d("EventSourceLog",""+event.getText());
-                Log.d("EventSourceLog","selectBegin "+selectBegin+" selectEnd: " + selectEnd);
+                selectBegin = event.getFromIndex();
+                int selectEnd = event.getToIndex();
                 if (selectBegin == selectEnd)
                 {
                     return;
                 }
-                String text = event.getText().toString().substring(selectBegin,selectEnd + 1);
+                String text = event.getText().toString().substring(selectBegin,selectEnd + 1).replaceAll("[^a-zA-Z0-9]","");
                 if(!text.trim().isEmpty())
                 {
-                    // if(actionBubble == null)
-                    //floatingiconAction();
+                    if(actionBubble == null)
+                        floatingiconAction();
                     clipBoardDataModel = new ClipBoardDataModel(text);
-                    Toast.makeText(getApplicationContext(),"Text" + text,Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -166,13 +160,13 @@ public class Myservice extends AccessibilityService {
                         @Override
                         public void onPrimaryClipChanged() {
                             //call floating Icon
-                            Toast.makeText(getApplicationContext(),"Instart third",Toast.LENGTH_LONG).show();
+
                             if(manager.hasPrimaryClip()){
                                 ClipData data = manager.getPrimaryClip();
                                 ClipData.Item item = data.getItemAt(0);
                                 clipBoardDataModel = new ClipBoardDataModel(item.getText().toString());
-                                // if(actionBubble == null)
-                                //floatingiconAction();
+                                if(actionBubble == null)
+                                    floatingiconAction();
                             }
                         }
                     }
@@ -188,7 +182,6 @@ public class Myservice extends AccessibilityService {
 
     @Override
     protected void onServiceConnected() {
-        Toast.makeText(getApplicationContext(),"Service connected ",Toast.LENGTH_LONG ).show();
         AccessibilityServiceInfo info = new AccessibilityServiceInfo();
         info.eventTypes = AccessibilityEvent.TYPE_VIEW_TEXT_SELECTION_CHANGED|AccessibilityEvent.TYPE_VIEW_CLICKED|AccessibilityEvent.TYPE_VIEW_CONTEXT_CLICKED|AccessibilityEvent.TYPE_VIEW_SELECTED|AccessibilityEvent.TYPE_VIEW_FOCUSED;
         info.feedbackType = AccessibilityServiceInfo.FEEDBACK_SPOKEN;
@@ -241,7 +234,9 @@ public class Myservice extends AccessibilityService {
         closeButtonCollapsed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(),"Stoppingservice",Toast.LENGTH_LONG).show();
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                    disableSelf();
+                }
                 stopSelf();
             }
         });

@@ -8,7 +8,7 @@
             />
         <Preference
             app:title="App Version"
-            app:summary="1.1.1"
+            app:summary="1.1.2"
             />
     </PreferenceCategory>
 

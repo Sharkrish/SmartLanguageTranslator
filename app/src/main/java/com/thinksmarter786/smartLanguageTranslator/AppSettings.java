@@ -14,6 +14,8 @@ import androidx.preference.PreferenceFragmentCompat;
 
 import com.thinksmarter786.smartLanguageTranslator.Utils.SharedPrefs;
 
+import hotchemi.android.rate.BuildConfig;
+
 public class AppSettings extends AppCompatActivity {
     Toolbar toolbar;
     @Override
@@ -54,7 +56,7 @@ public class AppSettings extends AppCompatActivity {
                     shareIntent.setAction(Intent.ACTION_SEND);
                     shareIntent.setType("text/plain");
                     String shareSub = "Hai, I am using smart language translator application, Translate any text to your native language. Which completely helpful. Use the below link and download it now.  \n";
-                    shareSub = shareSub + "https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID +"\n";
+                    shareSub = shareSub + "https://play.google.com/store/apps/details?id=" + getActivity().getPackageName() +"\n";
                     shareIntent.putExtra(Intent.EXTRA_TEXT,shareSub);
                     startActivity(Intent.createChooser(shareIntent,"Share Using"));
                     return true;
