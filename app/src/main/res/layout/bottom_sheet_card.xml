@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        app:cardUseCompatPadding="true"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="1dp"
+        android:elevation="1dp"
+        android:background="@color/white"
+        >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:orientation="vertical"
+                android:background="@color/white"
+                >
+                <TextView
+                    android:id="@+id/speakModelName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/gradient_end_color"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="20dp"/>
+
+                <TextView
+                    android:id="@+id/speakModelCode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/speakModelName"
+                    android:text="@string/app_name"
+                    android:textColor="@color/black"
+                    android:textSize="12dp"
+                    android:layout_marginLeft="30dp"/>
+            </RelativeLayout>
+
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/speech_card_badge"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right|end|top"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/language_selection"
+            android:gravity="center"
+            android:padding="3dp"
+            android:textColor="@android:color/white"
+            android:text=""
+            android:textSize="10sp"/>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

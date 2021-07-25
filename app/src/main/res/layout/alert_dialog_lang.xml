@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="25dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/progress_bg">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/imageLang"
+            android:textSize="14sp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:gravity="center_horizontal" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            >
+            <com.google.android.material.checkbox.MaterialCheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Don't show this again"
+                android:id="@+id/dntShow"
+                />
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        >
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/white"
+            android:text="OK"
+            android:textColor="@color/black"
+            android:id="@+id/okDismiss"
+            app:elevation="0dp"
+            android:shadowColor="@color/white"
+            />
+    </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

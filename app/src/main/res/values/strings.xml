@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Smart Language Translator</string>
+    <string name="rate_dialog_title">Smart Language Translator</string>
+    <string name="rate_dialog_message">Hope you are enjoying the feature of Language Translator. Please take a moment and rate the application. Thank you</string>
+    <string name="rate_dialog_ok">Rate now</string>
+    <string name="rate_dialog_cancel">Remind me later</string>
+    <string name="rate_dialog_no">No, thanks</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <string name="accessibility_service_label">Smart Language Translator</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+    <!-- Latin language dialog -->
+    <string name="imageLang">
+        Scan only the latin languages like Catalan,Danish,Dutch,English,Finnish,French,German,Hungarian,Italian,Latin,Norwegian,
+        Polish,Portugese,Romanian,Spanish,Swedish,Tagalog,Turkish.
+    </string>
+    <string name="setupdesc">
+        Smart Language Translator will automatically detect the language from  Copied/Voice/Input text. We recommend to select the primary language to translate the text.
+    </string>
+    <string name="appsetHeader">
+        Select the primary language to translate
+    </string>
+    <string name="accessibility_service_descriptiom">Permission need to detect the text for better translation feature</string>
+</resources>

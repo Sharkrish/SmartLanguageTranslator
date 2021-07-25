@@ -1,0 +1,35 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory app:title="About">
+        <Preference
+            app:title="App Name"
+            app:summary="Smart Language Translator"
+            />
+        <Preference
+            app:title="App Version"
+            app:summary="1.1.1"
+            />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="Translate">
+        <Preference
+            android:key="translateText"
+            android:title="Translate text to"
+            app:defaultValue="English"
+            app:summary="English"
+            />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="Share and feedback">
+        <Preference
+            app:key="feedback"
+            app:title="Send feedback"
+            app:summary="Report technical issues or suggest new features"/>
+
+        <Preference
+            app:key="share"
+            app:title="Share with friends"
+            app:summary="Please help us to improve our service by sharing with your friends. Thanks You"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

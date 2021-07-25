@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LanguageSelection"
+    android:background="@color/white"
+    android:id="@+id/languageSelectionLayout">
+
+    <EditText
+        android:id="@+id/searchLanguage"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/search_bg"
+        android:drawableStart="@drawable/ic_baseline_search_24"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
+        android:ems="10"
+        android:hint="Search Language"
+        android:inputType="text"
+        android:padding="8dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="8dp"
+         />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@id/searchLanguage"
+        android:id="@+id/languageRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/downloadLang"/>
+
+    <Button
+        android:id="@+id/downloadLang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download language"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+         />
+
+</RelativeLayout>

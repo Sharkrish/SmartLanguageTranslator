@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/speech_bottom_sheet_layout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+<com.google.android.material.textview.MaterialTextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:id="@+id/bottomSheetTitle"
+    android:text="Speech language"
+    android:textSize="16dp"
+    android:fontFamily="sans-serif"
+    android:padding="15dp"
+    android:textStyle="bold"
+    />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        android:padding="15dp">
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/speechrecyclerView"/>
+    </LinearLayout>
+
+</LinearLayout>
