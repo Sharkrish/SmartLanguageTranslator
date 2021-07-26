@@ -116,7 +116,7 @@ public class Myservice extends AccessibilityService {
     public void onAccessibilityEvent(AccessibilityEvent event) {
         switch(event.getEventType()){
             case AccessibilityEvent.TYPE_VIEW_FOCUSED:
-                calltheTextToPerform(event);
+                //calltheTextToPerform(event);
                 break;
             case AccessibilityEvent.TYPE_VIEW_SELECTED:
                 calltheTextToPerform(event);
