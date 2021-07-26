@@ -127,7 +127,7 @@ public class Myservice extends AccessibilityService {
             case AccessibilityEvent.TYPE_VIEW_CLICKED:
                 break;
             case AccessibilityEvent.TYPE_VIEW_CONTEXT_CLICKED:
-                calltheTextToPerform(event);
+                //calltheTextToPerform(event);
                 break;
         }
     }
